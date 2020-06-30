@@ -1,0 +1,33 @@
+<div class="col-md-6">
+    <h2 class="text-center">Add Credit Card</h2>
+    <form #creditcardForm = "ngForm">
+      <div class="form-group">
+        <label for="cardnumber">Credit Card Number:</label>
+        <input type="cardnumber" required minlength="6" maxlength="13"[(ngModel)]="card.cardNumber" placeholder="Card Number" name="carnumber" class="form-control"  id="cardnumber" #cardNo="ngModel">
+        <div *ngIf="cardNo.errors && (cardNo.dirty || cardNo.touched)" class="alert alert-danger">
+            <div [hidden]="!cardNo.errors.required">
+                Card number is required
+            </div>
+            <div [hidden]="!cardNo.errors.minlength">
+                Card number must be atleat 6 charecters 
+            </div>
+            <div [hidden]="!cardNo.errors.maxlength">
+                Card number cannot be more than 13 characters 
+            </div>
+
+        </div>
+      </div>
+    
+      <div class="form-group">
+        <label for="cardtype">Card Type:</label>
+        <input [(ngModel)]="card.type" placeholder="Card Type" name="cardtype" class="form-control" id="cardtype">
+      </div>
+    
+      <div class="form-group">
+        <label for="bankName">Bank Name</label>
+        <input [(ngModel)]="card.bankName" placeholder="Bank Name" name="Bank Name" class="form-control" id="bankName">
+      </div>
+    
+      <button class="btn btn-success" [disabled]="!creditcardForm.form.valid" (click)="createCreditCard()">Add Card</button>
+    </form>
+    </div>

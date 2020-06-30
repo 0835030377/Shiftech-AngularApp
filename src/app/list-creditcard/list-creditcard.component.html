@@ -1,0 +1,21 @@
+<div class="col-md-6">
+<table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Credit Card Number</th>
+      <th>Credit Card Type</th>
+      <th>Credit Card BankName</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let creditcard of creditcards">
+            <td>{{creditcard.cardNumber}}</td>
+            <td>{{creditcard.type}}</td>
+            <td>{{creditcard.bankName}}</td>
+           <!-- <td><button class="btn btn-danger" (click)="deleteCreditCard(creditcard)"> Delete Credit Card</button></td>-->
+ 
+            </tr>
+    </tbody>
+    </table>>
+</div>
+     
