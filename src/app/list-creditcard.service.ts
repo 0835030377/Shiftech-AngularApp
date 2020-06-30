@@ -26,7 +26,7 @@ export class ListCreditcardService {
   }
 
   public deleteCreditCard(creditcard) {
-    return this.httpClient.delete<CreditCard>("http://localhost:8080/employees" + "/"+ creditcard);
+    return this.httpClient.delete<CreditCard>("http://localhost:8080/creditcards" + "/"+ creditcard);
   }
 
   public createCreditCard(creditcard) {
